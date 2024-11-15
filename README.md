@@ -50,7 +50,7 @@ except Exception as e:
     print(f'Error: {e}')
 ```
 ### Output:
-![image](https://github.com/user-attachments/assets/43ddb2cd-8d64-4b88-be87-30734553fd40)
+![image](https://github.com/user-attachments/assets/59f7655d-c191-4123-9fd7-9137c0131354)
 
 ### Result:
 Thus, we have implemented a program that will transcribe the audio file in the file variable and print the transcribed text on the console, one line at a time. 
