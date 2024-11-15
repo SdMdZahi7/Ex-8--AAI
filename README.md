@@ -1,7 +1,7 @@
- <H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
+ <H3>Syed Muhammed Zahi</H3>
+<H3>212221230114</H3>
 <H3>EX. NO.8</H3>
-<H3>DATE:</H3>
+<H3>15/11/2024</H3>
 <H1 ALIGN =CENTER>Implementation of Speech Recognition</H1>
 <H3>Aim:</H3> 
  To implement the conversion of live speech to text.<BR>
@@ -20,11 +20,37 @@ Step 11: Perform speech recognition with exceptional handling:<Br>
 •	If successful, print the recognized text.<Br>
 •	Handle specific exceptions: If the recognition result is unknown or if there is an issue with the request to the Google Speech Recognition service, print corresponding error messages.<Br>
 •	A generic exception block captures any other unexpected errors.<Br>
-<H3>Program:</H3>
 
-Insert your code her
+### Program:
+```
+import pyaudio
+import speech_recognition as sr
 
-<H3> Output:</H3>
-Show the results here
+# initialize the Recognizer
+r = sr.Recognizer()
 
-<H3> Result:</H3>
+#Set duration for audio capture
+duration = 10
+
+#Record audio
+print("Say Something")
+
+# USe the default microphone as the audio source
+with sr.Microphone() as source:
+    audio_data = r.listen(source, timeout=duration)
+
+try:
+    text = r.recognize_google(audio_data)
+    print("you said:",text)
+except sr.UnknownValueError:
+    print("Sorry, could not understand audio")
+except sr.RequestError as e:
+    print(f'Error with the request to Google Speech Recognition Service: {e}')
+except Exception as e:
+    print(f'Error: {e}')
+```
+### Output:
+![image](https://github.com/user-attachments/assets/43ddb2cd-8d64-4b88-be87-30734553fd40)
+
+### Result:
+Thus, we have implemented a program that will transcribe the audio file in the file variable and print the transcribed text on the console, one line at a time. 
